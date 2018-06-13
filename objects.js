@@ -84,3 +84,21 @@ function testArray(a, b) {
 // var myDate = new Date(1998, 6, 14, 11, 20, 00)
 
 // document.write(myDate);
+
+/*
+передаются две строки вида "03 November 2017 04:17". 
+превратить строки в даты, сравнить их. 
+Для той, что больше получить день недели и вернуть его из функции.
+Название дня недели должно быть по-русски, с большой буквы.
+*/
+function testDateTime(a, b) {
+	var dayRu = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+    dateA = new Date(a);
+    dateB = new Date(b);
+    if (dateA > dateB) {
+		return dayRu[dateA.getDay()];
+	}
+    return dayRu[dateB.getDay()];
+    
+}
+console.log(testDateTime('04 August 1909 00:24', '03 November 1909 06:54'));  // Среда
