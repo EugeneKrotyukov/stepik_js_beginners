@@ -101,4 +101,37 @@ function testDateTime(a, b) {
     return dayRu[dateB.getDay()];
     
 }
-console.log(testDateTime('04 August 1909 00:24', '03 November 1909 06:54'));  // Среда
+// console.log(testDateTime('04 August 1909 00:24', '03 November 1909 06:54'));  // Среда
+
+
+// Обработка ошибок
+
+/*
+функцию передаются два параметра: 
+целочисленная переменная ("а") и 
+функция ("func"). 
+необходимо запустить функцию "func", с переменной "а" в качестве аргумента. 
+Вам нужно возвратить имя (свойство "name") возникающей ошибки.
+*/
+function testErrorFunc(a, func) {         
+	try {
+		func(a);
+	} catch(e) {
+		return e.name;
+	}
+}
+
+
+// Reg Exp
+
+/*
+в функцию первым параметром передается случайная строка(переменная s), 
+а вторым - случайная подстрока(переменная sub_s), 
+нужно вернуть из функции строку, 
+в которой будут перечислены через запятую все совпадения шаблона со строкой.
+*/
+function testRegExp(s, sub_s) {
+	var myPattern = new RegExp(sub_s, 'g');
+	return s.match(myPattern).join(',');
+}
+console.log(testRegExp('Andsirdaarrevarariarewbutovearrmararan', 'ar'));

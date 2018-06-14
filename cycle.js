@@ -318,6 +318,11 @@ function factorial(x) {
 }
 //console.log(factorial(3));
 
+function testFactorial(inputData) {
+  if (inputData == 0) {return 1}
+  return (inputData - 1)?(inputData * testFactorial(inputData - 1)):inputData;
+}
+
 
 /*
 Дано натуральное число n. 
